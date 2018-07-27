@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Variant.destroy_all
 Product.destroy_all
 
 product_names = %w(shirt jean short sock swim sweater jacket skirt dress vest swimsuit)
