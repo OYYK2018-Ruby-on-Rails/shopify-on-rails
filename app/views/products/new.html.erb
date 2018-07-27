@@ -1,0 +1,27 @@
+<center>
+  <%= form_with(model: @product, local: true) do |form| %>
+    <p>
+      <%= form.text_field :name, placeholder: 'product name' %>
+    </p>
+    <p>
+      <%= form.text_field :price, placeholder: 'product price' %>
+    </p>
+    <p>
+      <%= form.text_area :description, placeholder: 'product description' %>
+    </p>
+
+    <h2> Add Variant </h2>
+    <%= form.fields_for :variants do |variants_form| %>
+      <p>
+        <%= variants_form.text_field :name, placeholder: 'variant name' %>
+      </p>
+      <p>
+        <%= variants_form.text_field :stock, placeholder: 'variant stock' %>
+      </p>
+    <% end %>
+
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
+</center>

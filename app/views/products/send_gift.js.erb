@@ -1,0 +1,2 @@
+$('#gift-message').html("<%= j(@variant.stock_information)%>")
+$('.select-variant').html("<%= j(render(partial: 'variants/select_variant', locals: { product: @variant.product })) %>")

@@ -1,0 +1,9 @@
+<h1><%= @product.name %></h1>
+<h3><%= @product.price %> <%= default_currency %></h3>
+
+<% if @product.variants.any? %>
+  <div class='select-variant'>
+    <%= render partial: 'variants/select_variant', locals: { product: @product } %>
+  </div>
+<% end %>
+<div id='gift-message'></div>

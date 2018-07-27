@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shopify on Rails</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <center>
+    <%= link_to 'Products', root_path %>
+    |
+    <%= link_to 'New Product', new_product_path %>
+    |
+    <%= link_to 'Seed Products', seed_path, method: :post %>
+    </center>
+    <%= yield %>
+  </body>
+</html>
