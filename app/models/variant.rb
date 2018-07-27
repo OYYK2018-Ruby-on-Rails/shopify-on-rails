@@ -1,5 +1,7 @@
 class Variant < ApplicationRecord
   belongs_to :product, optional: true
+  validates :stock, numericality: { :greater_than_or_equal_to => 0 }
+  scope :in_stock, -> { where("stock > 0") }
 
   def send_gift
     decrement!(:stock)
