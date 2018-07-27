@@ -1,3 +1,4 @@
+<% if product.variants.count > 0 %>
 <div class='flex-item'>
   <%= link_to product_path(product) do %>
     <h2><%= product.name %></h2>
@@ -5,3 +6,4 @@
   <h3><%= product.price %></h3>
   <h2><%= default_currency %></h2>
 </div>
+<% end %>
