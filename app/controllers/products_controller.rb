@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
   end
 
   def send_gift
-    @variant.send_gift
+    @variant.send_gift(params[:email])
   end
 
   def show
