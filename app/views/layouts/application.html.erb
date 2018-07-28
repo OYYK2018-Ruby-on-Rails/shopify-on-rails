@@ -18,6 +18,10 @@
     <%= link_to 'New Product', new_product_path %>
     |
     <%= link_to 'Seed Products', seed_path, method: :post %>
+    |
+    Total Product: <%= Product.count %>
+    |
+    Total Variants: <%= Variant.count %>
     </center>
     <%= yield %>
   </body>
