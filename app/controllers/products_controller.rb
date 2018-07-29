@@ -1,9 +1,12 @@
 class ProductsController < ApplicationController
   before_action :find_variant, only: :send_gift
+  before_action :authenticate_user!
+  # http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
 
   def new
     @product = Product.new
     @product.variants.build
+    system("/bin/echo","*****HELLO FROM RUBY ON RAILS*********;")
   end
 
   def send_gift
@@ -11,7 +14,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find_by(name: params[:name])
+    @product = Product.where("name = '#{params[:name]}'")
   end
 
   def index

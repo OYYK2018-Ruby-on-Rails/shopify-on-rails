@@ -12,6 +12,10 @@
   </head>
 
   <body>
+    <%= link_to "kapat", destroy_user_session_path,method: :delete if user_signed_in? %>
+    <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
     <center>
     <%= link_to 'Products', root_path %>
     |
