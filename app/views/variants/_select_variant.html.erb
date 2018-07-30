@@ -1,5 +1,12 @@
 <%= form_tag(gift_product_path(product), method: :post, remote: true) do %>
-  <%= select_tag :variant_id, options_for_select(product.variants.collect { |variant| [variant.name, variant.id] }) %>
-  <%= text_field_tag :email %>
-  <%= submit_tag('Send Gift') %>
+  Size: <%= select_tag :variant_id, options_for_select(product.variants.collect { |variant| [variant.name, variant.id] }) %>
+  <br />
+  <%= text_field_tag :email, nil, placeholder: 'Email' %>
+  <br />
+  <%= submit_tag('Send Gift') if user_signed_in? %>
+  <% unless user_signed_in? %>
+    If you want to send gift please
+    <%= render 'layouts/shared/user_links'%>
+  <% end %>
+
 <% end %>
