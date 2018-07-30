@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :find_variant, only: :send_gift
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def new
     @product = Product.new
